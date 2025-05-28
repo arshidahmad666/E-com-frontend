@@ -29,7 +29,7 @@ const ThankYouPage = () => {
     const fetchOrder = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/orders/${orderId}`
+          `https://e-com-backend-thhn.onrender.com/api/orders/${orderId}`
         );
         setOrder(res.data);
       } catch (err) {

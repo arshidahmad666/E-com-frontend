@@ -64,11 +64,14 @@ const CheckoutPage = () => {
     setStatus(status);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/orders", {
-        product: order,
-        customer,
-        status,
-      });
+      const res = await axios.post(
+        "https://e-com-backend-thhn.onrender.com/api/orders",
+        {
+          product: order,
+          customer,
+          status,
+        }
+      );
 
       localStorage.removeItem("order");
       navigate(`/thank-you/${res.data._id}`);
